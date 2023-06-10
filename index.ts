@@ -59,8 +59,7 @@ const summarizeArticle = async (text: string): Promise<string> => {
       {
         role: 'user',
         content: `
-      下記の記事を2文以内に要約してください。文章はわかりやすく、簡潔にしてください。
-      また、言語は日本語でお願いします。
+      下記の記事を2文以内にわかりやすくまとめてください。また、言語は日本語でお願いします。
 
       ${text}
     `,
@@ -77,7 +76,7 @@ const collectArticles = async (): Promise<ArticleWithSummary[]> => {
       // RSS xmlをパース
       const feed = await parser.parseURL(url);
       // 1日以内の記事を抽出
-      const startDate = moment().subtract(7, 'days');
+      const startDate = moment().subtract(1, 'days');
       const endDate = moment();
       const articlesToday: Item[] = feed.items.filter((item: Item) => {
         if (!item.isoDate) return false;
