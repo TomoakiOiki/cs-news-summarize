@@ -2,7 +2,7 @@
   "name": "cs-news-summarize",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "compile": "tsc",
     "debug": "node --inspect node_modules/.bin/functions-framework --source=./dist --target=csSummarize",
@@ -14,14 +14,14 @@
     "dotenv": "^16.1.4",
     "moment": "^2.29.4",
     "openai": "^3.2.1",
-    "rss-parser": "^3.13.0"
+    "rss-parser": "^3.13.0",
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "@google-cloud/functions-framework": "^3.2.0",
     "@types/node": "^20.2.5",
     "@types/xml2js": "^0.4.11",
     "concurrently": "^8.1.0",
-    "node-fetch": "^2.6.1",
     "nodemon": "^2.0.22",
     "prettier": "^2.8.8",
     "typescript": "^5.1.3"

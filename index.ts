@@ -88,19 +88,19 @@ const collectArticles = async (): Promise<ArticleWithSummary[]> => {
         articlesToday.map(async (item: Item) => {
           // 記事を要約
           const summary = await summarizeArticle(
-            item.contentSnippet?.split('。').slice(0, 10).join('。') || ''
+            item.contentSnippet?.split('。').slice(0, 10).join('。') || '',
           );
           return {
             title: item.title || '記事タイトルなし',
             link: item.link || '記事リンクなし',
             summary,
           };
-        })
+        }),
       );
       return {
         contents,
       };
-    })
+    }),
   );
 
   // 記事をまとめる
